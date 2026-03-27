@@ -1,0 +1,79 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Data (MariaDB local data, no versionar)
+data/
+
+# Logs
+logs/
+*.log
+
+# Java/Maven
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Gradle/build
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# IDE/editor
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.iws
+*.iml
+*.ipr
+*.suo
+*.ntvs
+*.njsproj
+*.sln
+*.swp
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+.apt_generated
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scripts de utilidad (no versionar)
+git-commit-history.ps1
+build-history.ps1
+
+# Scripts de desarrollo local (no versionar)
+start.ps1
+start.sh
+find_free_ports.ps1
+find_free_ports.sh
+
+# Coverage reports (generated)
+frontend/coverage/
+
+# Misc cache
+_metadata
+.metadata
+.eslintcache
+tsconfig.tsbuildinfo
+
+# Documentación (mover a docs/ para mantener raíz limpia)
+docs/
