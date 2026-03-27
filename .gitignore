@@ -1,0 +1,75 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Data (MariaDB local data, no versionar)
+data/
+
+# Logs
+logs/
+*.log
+
+# Java/Maven
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Gradle/build
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# IDE/editor
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.iws
+*.iml
+*.ipr
+*.suo
+*.ntvs
+*.njsproj
+*.sln
+*.swp
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+.apt_generated
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Grafana vendor plugins (instalar en runtime; no versionar)
+infra/monitoring/grafana/plugins/
+
+# Script de utilidad (no versionar)
+git-commit-history.ps1
+
+# Coverage reports (generated)
+frontend/coverage/
+
+# Grafana runtime data
+infra/monitoring/grafana/grafana.db
+
+# Misc cache
+_metadata
+.metadata
+.eslintcache
+tsconfig.tsbuildinfo
