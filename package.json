@@ -1,0 +1,11 @@
+{
+  "name": "omnistock",
+  "private": true,
+  "description": "OmniStock monorepo — scripts de desarrollo en la raíz",
+  "scripts": {
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && mvnw.cmd clean test \"-Dspring.profiles.active=test\"",
+    "test:frontend": "cd frontend && npm test -- run",
+    "build": "cd backend && mvnw.cmd -B package -DskipTests && cd ../frontend && npm run build"
+  }
+}
