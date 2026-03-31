@@ -1,0 +1,169 @@
+services:
+  # --- LOG RESET (truncate logs on each compose up) ---
+  log-reset:
+    image: alpine:3.20
+    container_name: omnistock-log-reset
+    restart: "no"
+    command: >
+      sh -c "mkdir -p /logs/backend /logs/frontend
+      && : > /logs/backend/backend.log
+      && : > /logs/frontend/access.log
+      && : > /logs/frontend/error.log"
+    volumes:
+      - ./logs:/logs
+
+  # --- MARIADB LOCAL ---
+  mariadb-local:
+    image: mariadb:lts
+    container_name: omnistock-db-local
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: omnistockdb
+      MYSQL_USER: ${SPRING_DATASOURCE_USERNAME}
+      MYSQL_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+      MARIADB_AUTO_UPGRADE: 1
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/mariadb:/var/lib/mysql
+    networks:
+      - omnistock-net
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "--silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+
+  # --- SUPPLIER MOCK SERVER ---
+  json-mock-server:
+    build:
+      context: ./infra/json-mock-server
+    container_name: json-mock-server
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+      - "3002:3002"
+      - "3003:3003"
+      - "3004:3004"
+    networks:
+      - omnistock-net
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3001/products"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  # --- BACKEND (SPRING BOOT) ---
+  backend:
+    # Local development (build from local repository):
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    # Registry image (use this in server/prod):
+    # image: ${BACKEND_IMAGE}:${BACKEND_TAG}
+    container_name: omnistock-backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      log-reset:
+        condition: service_completed_successfully
+      json-mock-server:
+        condition: service_healthy
+      mariadb-local:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./logs/backend:/app/logs
+    networks:
+      - omnistock-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+      start_period: 60s
+
+  # --- FRONTEND (NGINX STATIC) ---
+  frontend:
+    # Local development (build from local repository):
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    # Registry image (use this in server/prod):
+    # image: ${FRONTEND_IMAGE}:${FRONTEND_TAG}
+    container_name: omnistock-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "8081:80"
+    volumes:
+      - ./logs/frontend:/usr/share/nginx/logs
+      - ./frontend/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - omnistock-net
+
+  # --- OBSERVABILITY ---
+  prometheus:
+    image: prom/prometheus:v2.53.1
+    container_name: omnistock-prometheus
+    restart: unless-stopped
+    volumes:
+      - ./infra/monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "9090:9090"
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-remote-write-receiver
+    networks:
+      - omnistock-net
+
+  alloy:
+    # Tip: if Docker Hub is slow/blocked, use GHCR:
+    # ALLOY_IMAGE=ghcr.io/grafana/alloy:latest
+    image: ${ALLOY_IMAGE:-grafana/alloy:latest}
+    container_name: omnistock-alloy
+    restart: unless-stopped
+    volumes:
+      - ./infra/monitoring/alloy/config.alloy:/etc/alloy/config.alloy:ro
+    command: run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/tmp/alloy /etc/alloy/config.alloy
+    ports:
+      - "12345:12345"
+    depends_on:
+      prometheus:
+        condition: service_started
+      backend:
+        condition: service_started
+    networks:
+      - omnistock-net
+
+  grafana:
+    image: grafana/grafana:11.1.4
+    container_name: omnistock-grafana
+    restart: unless-stopped
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GF_SECURITY_ADMIN_USER}
+      GF_SECURITY_ADMIN_PASSWORD: ${GF_SECURITY_ADMIN_PASSWORD}
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./infra/monitoring/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources:ro
+      - ./infra/monitoring/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./infra/monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports:
+      - "3000:3000"
+    networks:
+      - omnistock-net
+
+networks:
+  omnistock-net:
+    driver: bridge
+
+volumes:
+  mariadb_data:
+  grafana_data:
