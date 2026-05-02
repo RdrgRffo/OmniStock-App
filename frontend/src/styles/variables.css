@@ -1,0 +1,131 @@
+/* =========================================
+   Design Tokens — Variables CSS Globales
+   Identidad OmniStock: Monocromo + Amarillo Miel (Honeycomb)
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* ── Paleta Monocroma (Base) ── */
+  --mono-900: #0f0f0f;
+  --mono-800: #1a1a1a;
+  --mono-700: #2e2e2e;
+  --mono-600: #4a4a4a;
+  --mono-500: #6b6b6b;
+  --mono-400: #8f8f8f;
+  --mono-300: #b3b3b3;
+  --mono-200: #d4d4d4;
+  --mono-100: #e8e8e8;
+  --mono-50:  #f5f5f5;
+  --mono-25:  #fafafa;
+  --mono-0:   #ffffff;
+
+  /* ── Acento Amarillo Miel (Honeycomb) ── */
+  --honey-600: #a67c00;
+  --honey-500: #c49b1f;
+  --honey-400: #d4a82a;
+  --honey-300: #e0b83a;
+  --honey-200: #edc84a;
+  --honey-100: #f5d96a;
+  --honey-50:  #fef7d4;
+  --honey-25:  #fffbe6;
+
+  /* ── Escala Institucional (Brand) ── */
+  --brand-900: var(--mono-900);
+  --brand-800: var(--mono-800);
+  --brand-700: var(--mono-700);
+  --brand-600: var(--mono-600);
+  --brand-500: var(--mono-500);
+  --brand-400: var(--mono-400);
+  --brand-300: var(--mono-300);
+  --brand-200: var(--mono-200);
+  --brand-100: var(--mono-50);
+  --brand-50:  var(--mono-25);
+
+  /* ── Fondos ── */
+  --bg-primary: var(--mono-25);
+  --bg-secondary: var(--mono-0);
+  --bg-tertiary: var(--mono-100);
+  --bg-input: var(--mono-50);
+  --bg-hover: var(--mono-100);
+  --bg-active: var(--mono-200);
+
+  /* ── Textos ── */
+  --text-primary: var(--mono-900);
+  --text-secondary: var(--mono-600);
+  --text-muted: var(--mono-400);
+  --text-placeholder: var(--mono-300);
+  --text-on-accent: var(--mono-900);
+  --text-on-dark: var(--mono-0);
+
+  /* ── Color Primario (Amarillo Miel) ── */
+  --color-primary: var(--honey-400);
+  --color-primary-hover: var(--honey-300);
+  --color-primary-active: var(--honey-500);
+  --color-primary-disabled: var(--honey-100);
+  --color-primary-light: var(--honey-25);
+
+  /* ── Color Secundario (Monocromo oscuro) ── */
+  --color-secondary: var(--mono-700);
+  --color-secondary-hover: var(--mono-800);
+  --color-secondary-active: var(--mono-900);
+
+  /* ── Brand Title ── */
+  --color-brand-title: var(--mono-900);
+
+  /* ── Acentos ── */
+  --color-accent: var(--honey-400);
+  --color-accent-hover: var(--honey-300);
+
+  /* ── Danger / Error ── */
+  --color-danger: #b91c1c;
+  --color-danger-hover: #991b1b;
+  --color-danger-active: #7f1d1d;
+  --color-danger-light: #fef2f2;
+
+  /* ── Focus Ring ── */
+  --color-focus-ring: var(--honey-200);
+
+  /* ── Estados (Success, Error, Warning, Neutral) ── */
+  --color-status-success-bg: #f0fdf4;
+  --color-status-success-text: #166534;
+  --color-status-success-border: #bbf7d0;
+  --color-status-error-bg: #fef2f2;
+  --color-status-error-text: #991b1b;
+  --color-status-error-border: #fecaca;
+  --color-status-warning-bg: #fffbeb;
+  --color-status-warning-text: #92400e;
+  --color-status-warning-border: #fde68a;
+  --color-status-neutral-bg: var(--mono-50);
+  --color-status-neutral-text: var(--mono-600);
+  --color-status-neutral-border: var(--mono-200);
+
+  /* ── Semáforo de disponibilidad (NO TOCAR) ── */
+  --color-success-bg: #064e3b;
+  --color-success-text: #a7f3d0;
+  --color-error-bg: #7f1d1d;
+  --color-error-text: #fecaca;
+
+  /* ── Tipografía ── */
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --font-mono: 'Inter', sans-serif;
+
+  /* ── Radios ── */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* ── Sombras ── */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  /* ── Transiciones ── */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+}
