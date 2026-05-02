@@ -1,0 +1,108 @@
+/* =========================================
+   index.css — Estilos base y reset
+   OmniStock — Identidad: Monocromo + Naranja Operativo
+   ========================================= */
+
+/* Importar variables y estilos compartidos */
+@import './styles/variables.css';
+@import './styles/scrollbar.css';
+@import './components/ui/Button.css';
+@import './components/ui/DataTable.css';
+@import './components/ui/Form.css';
+@import './components/ui/ErrorBoundary.css';
+
+/* ── Reset base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  color: var(--color-brand-title);
+}
+
+a {
+  color: var(--color-accent);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* ── Contenedores de Página ── */
+.list-page-container {
+  min-height: 100vh;
+  padding: 1.5rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+/* ── Selección de texto ── */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--text-on-accent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .list-page-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-create {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
