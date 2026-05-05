@@ -1,0 +1,104 @@
+/* =========================================
+   Estilos Globales de Tabla
+   ========================================= */
+
+/* Contenedor de tabla estándar */
+.table-container {
+  overflow-x: auto;
+  border: 1px solid var(--bg-tertiary);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Tabla en sí */
+.data-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  table-layout: fixed;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.data-table thead {
+  background-color: var(--bg-tertiary);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+}
+
+.data-table th {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+}
+
+.data-table td {
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--bg-tertiary);
+  vertical-align: middle;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.data-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.data-table tbody tr:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.data-table .clickable-row {
+  cursor: pointer;
+}
+
+/* Celdas de Acción */
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+/* Mensajes de tabla (Loading/Error) */
+.table-message-center {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .data-table th, .data-table td {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .actions-cell {
+    padding-right: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .btn-action {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .table-container {
+    border-radius: var(--radius-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .data-table th, .data-table td {
+    padding: 0.4rem 0.5rem;
+  }
+}
