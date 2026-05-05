@@ -1,0 +1,153 @@
+/* =========================================
+   Botones Globales — OmniStock
+   Identidad: Monocromo + Amarillo Miel
+   ========================================= */
+
+/* ── Base ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: 1px solid transparent;
+  line-height: 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: var(--font-body);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ── Primario (Amarillo Miel) ── */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--text-on-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-active);
+  color: var(--text-on-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active:not(:disabled) {
+  background-color: var(--color-primary-active);
+  transform: translateY(0);
+}
+
+/* ── Secundario (Monocromo) ── */
+.btn-secondary {
+  background-color: var(--bg-secondary);
+  border-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--bg-hover);
+  border-color: var(--mono-300);
+  color: var(--text-primary);
+}
+
+.btn-secondary:active:not(:disabled) {
+  background-color: var(--bg-active);
+}
+
+/* ── Peligro ── */
+.btn-danger {
+  background-color: var(--color-danger);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: var(--color-danger-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-danger:active:not(:disabled) {
+  background-color: var(--color-danger-active);
+  transform: translateY(0);
+}
+
+/* ── Botón Crear Global (arriba a la derecha) ── */
+.btn-create {
+  background-color: var(--color-primary);
+  color: var(--text-on-accent);
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+}
+
+.btn-create:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-create:active {
+  background-color: var(--color-primary-active);
+  transform: translateY(0);
+}
+
+/* ── Botones de acción en tablas ── */
+.btn-action {
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-body);
+}
+
+.btn-action-edit {
+  background-color: var(--color-secondary);
+  color: var(--text-on-dark);
+}
+
+.btn-action-edit:hover {
+  background-color: var(--color-secondary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-action-delete {
+  background-color: var(--color-danger);
+  color: white;
+}
+
+.btn-action-delete:hover {
+  background-color: var(--color-danger-hover);
+  transform: translateY(-1px);
+}
