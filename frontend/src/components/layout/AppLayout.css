@@ -1,0 +1,426 @@
+/* =============================
+   Layout Principal — OmniStock
+   Identidad: Monocromo + Amarillo Miel
+   ============================= */
+
+/* ── Layout base ── */
+.app-layout {
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+}
+
+/* =============================
+   Header Superior
+   ============================= */
+.app-header {
+    background-color: var(--bg-secondary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid var(--bg-tertiary);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    width: 95%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.header-logo-link {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    text-decoration: none;
+}
+
+.header-logo-text {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--color-brand-title);
+    letter-spacing: -0.5px;
+    line-height: 1;
+    font-family: var(--font-display);
+}
+
+.header-logo-text::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    margin-left: 4px;
+    vertical-align: super;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-greeting {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+/* ── Botón de Cerrar Sesión (header) ── */
+.logout-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: var(--mono-900);
+    color: white;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+}
+
+.logout-button:hover {
+    background-color: var(--mono-800);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.logout-button:focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+}
+
+/* =============================
+   Botón toggle sidebar
+   ============================= */
+.sidebar-toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.sidebar-toggle-btn:hover {
+    background-color: var(--bg-hover);
+}
+
+/* =============================
+   Cuerpo (sidebar + contenido)
+   ============================= */
+.app-body {
+    display: flex;
+    flex: 1;
+    min-height: calc(100vh - 60px);
+    align-items: stretch;
+}
+
+/* =============================
+   Sidebar Lateral
+   ============================= */
+.sidebar {
+    width: 240px;
+    min-width: 240px;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--bg-tertiary);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+    position: sticky;
+    top: 60px;
+    transition: width var(--transition-slow), min-width var(--transition-slow);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px 12px;
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.sidebar-title {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+
+.sidebar-close-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.sidebar-close-btn:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+/* Navegación del sidebar */
+.sidebar-nav {
+    flex: 1;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebar-link:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.sidebar-link--active {
+    background-color: var(--color-primary-light);
+    color: var(--color-brand-title);
+    font-weight: 600;
+    border-left: 3px solid var(--color-accent);
+}
+
+.sidebar-link--active:hover {
+    background-color: var(--color-primary-light);
+    color: var(--color-brand-title);
+}
+
+/* Footer del sidebar — fijo en la parte inferior */
+.sidebar-footer {
+    padding: 16px 12px;
+    border-top: 2px solid var(--bg-tertiary);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    background-color: var(--bg-secondary);
+    z-index: 1;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.04);
+}
+
+.sidebar-sync-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    font-family: var(--font-body);
+}
+
+.sidebar-sync-btn:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.sidebar-sync-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.sidebar-logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border: none;
+    border-radius: var(--radius-md);
+    background-color: var(--mono-900);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-family: var(--font-body);
+}
+
+.sidebar-logout-btn:hover {
+    background-color: var(--mono-800);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* =============================
+   Overlay para móvil
+   ============================= */
+.sidebar-overlay {
+    display: none;
+}
+
+/* =============================
+   Contenido principal
+   ============================= */
+.app-main {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+/* =============================
+   Elementos compartidos
+   ============================= */
+.cart-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.cart-link:hover {
+    color: var(--text-primary);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--color-accent);
+    color: var(--text-on-accent);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    min-width: 18px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.spin-icon {
+    animation: spin 1s linear infinite;
+}
+
+.spinner {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 2px solid white;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =============================
+   Responsive: Tablets y móviles
+   ============================= */
+@media (max-width: 1024px) {
+    .sidebar-toggle-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -280px;
+        width: 280px;
+        min-width: 280px;
+        height: 100vh;
+        max-height: 100vh;
+        z-index: 30;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
+        transition: left var(--transition-slow);
+    }
+
+    .sidebar--open {
+        left: 0;
+    }
+
+    .sidebar-close-btn {
+        display: flex;
+    }
+
+    .sidebar-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 25;
+    }
+
+    .app-main {
+        padding: 16px;
+    }
+
+    .header-container {
+        padding: 0 16px;
+    }
+
+    .logout-label {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .user-greeting {
+        display: none;
+    }
+
+    .app-main {
+        padding: 12px;
+    }
+
+    .sidebar {
+        width: 260px;
+        min-width: 260px;
+        left: -260px;
+        max-height: 100vh;
+    }
+}
