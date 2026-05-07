@@ -1,0 +1,12 @@
+/* =========================================
+   Error Boundary
+   ========================================= */
+
+.error-boundary-box {
+  border: 1px solid var(--color-danger);
+  background-color: var(--color-status-error-bg);
+  color: var(--color-danger-hover);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  margin: 1rem 0;
+}
