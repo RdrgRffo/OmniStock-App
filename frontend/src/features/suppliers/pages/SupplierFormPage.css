@@ -1,0 +1,94 @@
+/* =========================================
+   SupplierFormPage — Estilos específicos
+   ========================================= */
+
+.supplier-form-page {
+  padding: 2rem;
+  color: var(--text-primary);
+}
+
+/* Checkbox group */
+.checkbox-group {
+  justify-content: center;
+}
+
+.checkbox-group label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  height: 100%;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+/* Mappings section */
+.section-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.btn-add-mapping {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-add-mapping:hover {
+  text-decoration: underline;
+}
+
+.mappings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mapping-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+  background-color: var(--bg-primary);
+  padding: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--bg-tertiary);
+}
+
+.no-mappings-message {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  border-radius: 0.375rem;
+  border: 1px dashed var(--bg-tertiary);
+}
+
+.btn-icon-delete {
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon-delete:hover {
+  color: var(--color-danger-hover);
+}
