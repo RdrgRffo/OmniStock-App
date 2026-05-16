@@ -1,0 +1,38 @@
+/* =========================================
+   UserFormPage — Estilos específicos
+   ========================================= */
+
+.user-form-page {
+  padding: 2rem;
+  color: var(--text-primary);
+}
+
+/* Roles checkbox group */
+.roles-checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.role-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  background-color: var(--bg-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid var(--bg-tertiary);
+  transition: all 0.2s ease-in-out;
+}
+
+.role-label:has(input:checked) {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.role-label input[type="radio"] {
+  display: none;
+}
