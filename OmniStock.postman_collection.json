@@ -1,0 +1,259 @@
+{
+	"info": {
+		"name": "OmniStock API",
+		"description": "Coleccion completa de endpoints de la API de OmniStock para verificar el despliegue.\n\nInstrucciones:\n1. Ejecuta primero '1. Auth - Login' para obtener el token\n2. El token se guarda automaticamente en la variable 'token'\n3. El resto de endpoints usaran el token automaticamente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "1. Auth - Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"if (jsonData.success && jsonData.data && jsonData.data.token) {",
+							"    pm.collectionVariables.set('token', jsonData.data.token);",
+							"    console.log('Token guardado correctamente');",
+							"} else {",
+							"    console.log('Error al obtener token:', JSON.stringify(jsonData));",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{username}}\",\n    \"password\": \"{{password}}\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/auth/login",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "auth", "login"]
+				}
+			}
+		},
+		{
+			"name": "2. Analytics - Price Variation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/analytics/price-variation?months=6&outlierThreshold=50",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "analytics", "price-variation"],
+					"query": [
+						{ "key": "months", "value": "6" },
+						{ "key": "outlierThreshold", "value": "50" }
+					]
+				}
+			}
+		},
+		{
+			"name": "3. Analytics - Stockout Rates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/analytics/stockout-rates",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "analytics", "stockout-rates"]
+				}
+			}
+		},
+		{
+			"name": "4. Analytics - Price Dispersion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/analytics/price-dispersion?maxRows=10",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "analytics", "price-dispersion"],
+					"query": [
+						{ "key": "maxRows", "value": "10" }
+					]
+				}
+			}
+		},
+		{
+			"name": "5. Analytics - Price Stability",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/analytics/price-stability?days=90&maxRows=10",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "analytics", "price-stability"],
+					"query": [
+						{ "key": "days", "value": "90" },
+						{ "key": "maxRows", "value": "10" }
+					]
+				}
+			}
+		},
+		{
+			"name": "6. Analytics - Stock Volatility",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/analytics/stock-volatility?days=30&maxRows=10",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "analytics", "stock-volatility"],
+					"query": [
+						{ "key": "days", "value": "30" },
+						{ "key": "maxRows", "value": "10" }
+					]
+				}
+			}
+		},
+		{
+			"name": "7. Analytics - Catalog Growth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/analytics/catalog-growth?weeks=12",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "analytics", "catalog-growth"],
+					"query": [
+						{ "key": "weeks", "value": "12" }
+					]
+				}
+			}
+		},
+		{
+			"name": "8. Analytics - MOQ Distribution",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/analytics/moq",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "analytics", "moq"]
+				}
+			}
+		},
+		{
+			"name": "9. Analytics - Condition Mix",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/analytics/condition-mix",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "analytics", "condition-mix"]
+				}
+			}
+		},
+		{
+			"name": "10. Analytics - Cost Coverage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/analytics/cost-coverage?maxRows=10",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "analytics", "cost-coverage"],
+					"query": [
+						{ "key": "maxRows", "value": "10" }
+					]
+				}
+			}
+		},
+		{
+			"name": "11. Products - List All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/productos",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "productos"]
+				}
+			}
+		},
+		{
+			"name": "12. Suppliers - List All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/proveedores/list",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "proveedores", "list"]
+				}
+			}
+		},
+		{
+			"name": "13. Dashboard - Summary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/dashboard/summary",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "dashboard", "summary"]
+				}
+			}
+		},
+		{
+			"name": "14. Analytics - Trading Opportunities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/analytics/trading-opportunities",
+					"host": ["{{baseUrl}}"],
+					"path": ["api", "v1", "analytics", "trading-opportunities"]
+				}
+			}
+		}
+	]
+}
