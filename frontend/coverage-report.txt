@@ -1,0 +1,222 @@
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mC:/Users/rodri/Music/OmniStock/frontend[39m
+      [2mCoverage enabled with [22m[33mv8[39m
+
+stderr | src/test/api.test.ts > API Axios Client > response interceptor - resilience > should handle localStorage errors gracefully when setting sessionExpired
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+    at LocationImpl._locationObjectNavigate (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:31:5)
+    at LocationImpl._locationObjectSetterNavigate (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:25:17)
+    at LocationImpl.set href [as href] (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\Location-impl.js:47:10)
+    at Location.set href [as href] (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\generated\Location.js:125:37)
+    at responseErrorInterceptor (C:\Users\rodri\Music\OmniStock\frontend\src\test\api.test.ts:54:21)
+    at C:\Users\rodri\Music\OmniStock\frontend\src\test\api.test.ts:166:20
+    at file:///C:/Users/rodri/Music/OmniStock/frontend/node_modules/@vitest/runner/dist/index.js:146:14 undefined
+
+ [32mÔ£ô[39m src/test/api.test.ts [2m([22m[2m12 tests[22m[2m)[22m[90m 69[2mms[22m[39m
+ [32mÔ£ô[39m src/test/constants.test.ts [2m([22m[2m12 tests[22m[2m)[22m[90m 12[2mms[22m[39m
+ [32mÔ£ô[39m src/test/budgetService.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 20[2mms[22m[39m
+ [32mÔ£ô[39m src/test/supplierService.test.ts [2m([22m[2m9 tests[22m[2m)[22m[90m 19[2mms[22m[39m
+stderr | src/test/AuthContext.test.tsx > AuthContext > initial state > should handle invalid token on init
+Error decoding initial token: Error: Invalid token
+    at C:\Users\rodri\Music\OmniStock\frontend\src\test\AuthContext.test.tsx:97:15
+    at mockCall (file:///C:/Users/rodri/Music/OmniStock/frontend/node_modules/@vitest/spy/dist/index.js:61:17)
+    at spy (file:///C:/Users/rodri/Music/OmniStock/frontend/node_modules/tinyspy/dist/index.js:45:80)
+    at Proxy.jwtDecode (C:\Users\rodri\Music\OmniStock\frontend\src\test\AuthContext.test.tsx:3:27)
+    at getInitialAuthState (C:\Users\rodri\Music\OmniStock\frontend\src\features\auth\context\AuthContext.tsx:20:26)
+    at mountState (C:\Users\rodri\Music\OmniStock\frontend\node_modules\react-dom\cjs\react-dom.development.js:16167:20)
+    at Object.useState (C:\Users\rodri\Music\OmniStock\frontend\node_modules\react-dom\cjs\react-dom.development.js:16880:16)
+    at Proxy.useState (C:\Users\rodri\Music\OmniStock\frontend\node_modules\react\cjs\react.development.js:1622:21)
+    at AuthProvider (C:\Users\rodri\Music\OmniStock\frontend\src\features\auth\context\AuthContext.tsx:42:37)
+    at renderWithHooks (C:\Users\rodri\Music\OmniStock\frontend\node_modules\react-dom\cjs\react-dom.development.js:15486:18)
+
+stderr | src/test/AuthContext.test.tsx > AuthContext > login > should reject expired token on login
+Token already expired on login
+
+stderr | src/test/AuthContext.test.tsx > AuthContext > login > should handle decode error on login gracefully
+Error decoding token on login: Error: Decode failed
+    at C:\Users\rodri\Music\OmniStock\frontend\src\test\AuthContext.test.tsx:176:15
+    at mockCall (file:///C:/Users/rodri/Music/OmniStock/frontend/node_modules/@vitest/spy/dist/index.js:61:17)
+    at spy (file:///C:/Users/rodri/Music/OmniStock/frontend/node_modules/tinyspy/dist/index.js:45:80)
+    at Proxy.jwtDecode (C:\Users\rodri\Music\OmniStock\frontend\src\test\AuthContext.test.tsx:3:27)
+    at login (C:\Users\rodri\Music\OmniStock\frontend\src\features\auth\context\AuthContext.tsx:48:28)
+    at onClick (C:\Users\rodri\Music\OmniStock\frontend\src\test\AuthContext.test.tsx:23:11)
+    at HTMLUnknownElement.callCallback (C:\Users\rodri\Music\OmniStock\frontend\node_modules\react-dom\cjs\react-dom.development.js:4164:14)
+    at HTMLUnknownElement.callTheUserObjectsOperation (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\generated\EventListener.js:26:30)
+    at innerInvokeEventListeners (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:350:25)
+    at invokeEventListeners (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\events\EventTarget-impl.js:286:3)
+
+ [32mÔ£ô[39m src/test/AuthContext.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 330[2mms[22m[39m
+ [32mÔ£ô[39m src/test/App.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 186[2mms[22m[39m
+ [32mÔ£ô[39m src/test/BudgetContext.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 309[2mms[22m[39m
+ [32mÔ£ô[39m src/test/analyticsService.test.ts [2m([22m[2m10 tests[22m[2m)[22m[90m 21[2mms[22m[39m
+ [32mÔ£ô[39m src/test/productService.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 64[2mms[22m[39m
+ [32mÔ£ô[39m src/test/DataTable.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 390[2mms[22m[39m
+ [32mÔ£ô[39m src/test/useFieldErrors.test.ts [2m([22m[2m7 tests[22m[2m)[22m[33m 339[2mms[22m[39m
+ [32mÔ£ô[39m src/test/exportPurchaseOrder.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 146[2mms[22m[39m
+stderr | src/test/exportPurchaseOrder.test.ts
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+    at Timeout._onTimeout (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkElementUtils-impl.js:81:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+    at Timeout._onTimeout (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkElementUtils-impl.js:81:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:3)
+    at Timeout._onTimeout (C:\Users\rodri\Music\OmniStock\frontend\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkElementUtils-impl.js:81:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+
+ [32mÔ£ô[39m src/test/useDebounce.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 147[2mms[22m[39m
+stderr | src/test/ProtectedRoute.test.tsx > ProtectedRoute > should redirect to /login when not authenticated
+ÔÜá´©Å React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+ÔÜá´©Å React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+ [32mÔ£ô[39m src/test/ProtectedRoute.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 212[2mms[22m[39m
+ [32mÔ£ô[39m src/test/userService.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 19[2mms[22m[39m
+ [32mÔ£ô[39m src/test/notificationService.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 28[2mms[22m[39m
+ [32mÔ£ô[39m src/test/dashboardService.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 14[2mms[22m[39m
+ [32mÔ£ô[39m src/test/Pagination.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 652[2mms[22m[39m
+ [32mÔ£ô[39m src/test/Badge.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[90m 148[2mms[22m[39m
+ [32mÔ£ô[39m src/test/ErrorBoundary.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 1050[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ErrorBoundary[2m > [22mshould catch error and show fallback UI [33m369[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ErrorBoundary[2m > [22mshould show retry button when onRetry is provided [33m354[2mms[22m[39m
+ [32mÔ£ô[39m src/test/supplierHealthService.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 13[2mms[22m[39m
+ [32mÔ£ô[39m src/test/authService.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 14[2mms[22m[39m
+ [32mÔ£ô[39m src/test/formatting.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 41[2mms[22m[39m
+stderr | src/test/NotFoundPage.test.tsx > NotFoundPage > should render 404 title
+ÔÜá´©Å React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+ÔÜá´©Å React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+ [32mÔ£ô[39m src/test/FieldError.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[90m 92[2mms[22m[39m
+ [32mÔ£ô[39m src/test/NotFoundPage.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[90m 107[2mms[22m[39m
+ [32mÔ£ô[39m src/test/AvailabilityIndicator.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[90m 182[2mms[22m[39m
+ [32mÔ£ô[39m src/test/FormSection.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 82[2mms[22m[39m
+ [32mÔ£ô[39m src/test/FormGrid.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 76[2mms[22m[39m
+ [32mÔ£ô[39m src/test/FormActions.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 69[2mms[22m[39m
+ [32mÔ£ô[39m src/test/useNotifications.test.tsx [2m([22m[2m1 test[22m[2m)[22m[90m 49[2mms[22m[39m
+ [32mÔ£ô[39m src/test/useBudget.test.tsx [2m([22m[2m1 test[22m[2m)[22m[90m 29[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m31 passed[39m[22m[90m (31)[39m
+[2m      Tests [22m [1m[32m172 passed[39m[22m[90m (172)[39m
+[2m   Start at [22m 10:28:47
+[2m   Duration [22m 16.83s[2m (transform 2.73s, setup 8.14s, collect 9.67s, tests 4.93s, environment 51.63s, prepare 9.58s)[22m
+
+[34m % [39m[2mCoverage report from [22m[33mv8[39m
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   18.64 |     82.1 |   75.18 |   18.64 |                   
+ src               |     100 |      100 |     100 |     100 |                   
+  App.tsx          |     100 |      100 |     100 |     100 |                   
+  types.ts         |       0 |        0 |       0 |       0 |                   
+ ...mponents/badge |     100 |      100 |     100 |     100 |                   
+  Badge.tsx        |     100 |      100 |     100 |     100 |                   
+ ...omponents/form |     100 |      100 |     100 |     100 |                   
+  FieldError.tsx   |     100 |      100 |     100 |     100 |                   
+  FormActions.tsx  |     100 |      100 |     100 |     100 |                   
+  FormGrid.tsx     |     100 |      100 |     100 |     100 |                   
+  FormSection.tsx  |     100 |      100 |     100 |     100 |                   
+ ...ponents/layout |       0 |        0 |       0 |       0 |                   
+  AppLayout.tsx    |       0 |        0 |       0 |       0 | 1-115             
+ src/components/ui |     100 |      100 |     100 |     100 |                   
+  DataTable.tsx    |     100 |      100 |     100 |     100 |                   
+  ...rBoundary.tsx |     100 |      100 |     100 |     100 |                   
+ src/constants     |     100 |      100 |     100 |     100 |                   
+  api.ts           |     100 |      100 |     100 |     100 |                   
+  links.ts         |     100 |      100 |     100 |     100 |                   
+ ...ics/components |       0 |        0 |       0 |       0 |                   
+  ...ionLayout.tsx |       0 |        0 |       0 |       0 | 1-36              
+  ...gSections.tsx |       0 |        0 |       0 |       0 | 1-107             
+  ...iesTables.tsx |       0 |        0 |       0 |       0 | 1-76              
+  ...eSections.tsx |       0 |        0 |       0 |       0 | 1-199             
+  ...kSections.tsx |       0 |        0 |       0 |       0 | 1-180             
+ ...tics/constants |       0 |        0 |       0 |       0 |                   
+  tabs.tsx         |       0 |        0 |       0 |       0 | 1-11              
+ ...nalytics/pages |       0 |        0 |       0 |       0 |                   
+  ...yticsPage.tsx |       0 |        0 |       0 |       0 | 1-212             
+ ...s/auth/context |     100 |     87.5 |     100 |     100 |                   
+  AuthContext.tsx  |     100 |     87.5 |     100 |     100 | 29,62             
+ ...res/auth/pages |       0 |        0 |       0 |       0 |                   
+  LoginPage.tsx    |       0 |        0 |       0 |       0 | 1-251             
+ .../auth/services |     100 |      100 |     100 |     100 |                   
+  authService.ts   |     100 |      100 |     100 |     100 |                   
+ ...budget/context |   60.44 |    78.94 |    90.9 |   60.44 |                   
+  ...etContext.tsx |    58.6 |    77.14 |      90 |    58.6 | ...21,263,284-321 
+  ...ntextStore.ts |     100 |      100 |     100 |     100 |                   
+  useBudget.ts     |     100 |      100 |     100 |     100 |                   
+ ...s/budget/pages |       0 |        0 |       0 |       0 |                   
+  ...etailPage.tsx |       0 |        0 |       0 |       0 | 1-346             
+  ...tListPage.tsx |       0 |        0 |       0 |       0 | 1-208             
+  BudgetPage.tsx   |       0 |        0 |       0 |       0 | 1-369             
+ ...udget/services |     100 |      100 |     100 |     100 |                   
+  budgetService.ts |     100 |      100 |     100 |     100 |                   
+ ...ard/components |       0 |        0 |       0 |       0 |                   
+  TradingView.tsx  |       0 |        0 |       0 |       0 | 1-212             
+ ...ashboard/pages |       0 |        0 |       0 |       0 |                   
+  ...yticsPage.tsx |       0 |        0 |       0 |       0 | 1                 
+  ...boardPage.tsx |       0 |        0 |       0 |       0 | 1-454             
+  ...itiesPage.tsx |       0 |        0 |       0 |       0 | 1-196             
+ ...board/services |     100 |      100 |     100 |     100 |                   
+  ...icsService.ts |     100 |      100 |     100 |     100 |                   
+  ...ardService.ts |     100 |      100 |     100 |     100 |                   
+  ...lthService.ts |     100 |      100 |     100 |     100 |                   
+ ...ory/components |   40.08 |    90.32 |   66.66 |   40.08 |                   
+  ...Indicator.tsx |     100 |      100 |     100 |     100 |                   
+  Pagination.tsx   |   96.96 |    94.44 |   71.42 |   96.96 | 16-17             
+  ProductTable.tsx |       0 |        0 |       0 |       0 | 1-156             
+  SearchBar.tsx    |       0 |        0 |       0 |       0 | 1-39              
+ ...nventory/pages |       0 |        0 |       0 |       0 |                   
+  ...boardPage.tsx |       0 |        0 |       0 |       0 | 1-141             
+  ...etailPage.tsx |       0 |        0 |       0 |       0 | 1-254             
+ ...ntory/services |     100 |    91.66 |     100 |     100 |                   
+  ...uctService.ts |     100 |    91.66 |     100 |     100 | 32                
+ ...ons/components |       0 |        0 |       0 |       0 |                   
+  ...ationBell.tsx |       0 |        0 |       0 |       0 | 1-190             
+ ...ations/context |    5.47 |       50 |      50 |    5.47 |                   
+  ...onContext.tsx |       0 |        0 |       0 |       0 | 1-188             
+  ...ntextStore.ts |     100 |      100 |     100 |     100 |                   
+  ...ifications.ts |      75 |    66.66 |     100 |      75 | 9-10              
+ ...ications/pages |       0 |        0 |       0 |       0 |                   
+  ...tionsPage.tsx |       0 |        0 |       0 |       0 | 1-204             
+ ...tions/services |     100 |      100 |     100 |     100 |                   
+  ...ionService.ts |     100 |      100 |     100 |     100 |                   
+ ...eHistory/pages |       0 |        0 |       0 |       0 |                   
+  ...storyPage.tsx |       0 |        0 |       0 |       0 | 1-237             
+ ...uppliers/pages |       0 |        0 |       0 |       0 |                   
+  ...boardPage.tsx |       0 |        0 |       0 |       0 | 1-120             
+  ...etailPage.tsx |       0 |        0 |       0 |       0 | 1-212             
+  ...rFormPage.tsx |       0 |        0 |       0 |       0 | 1-412             
+  ...rListPage.tsx |       0 |        0 |       0 |       0 | 1-65              
+ ...liers/services |     100 |      100 |     100 |     100 |                   
+  ...ierService.ts |     100 |      100 |     100 |     100 |                   
+ ...es/users/pages |       0 |        0 |       0 |       0 |                   
+  UserFormPage.tsx |       0 |        0 |       0 |       0 | 1-216             
+  UserListPage.tsx |       0 |        0 |       0 |       0 | 1-87              
+ ...users/services |     100 |      100 |     100 |     100 |                   
+  userService.ts   |     100 |      100 |     100 |     100 |                   
+ src/hooks         |     100 |      100 |     100 |     100 |                   
+  useDebounce.ts   |     100 |      100 |     100 |     100 |                   
+  ...ieldErrors.ts |     100 |      100 |     100 |     100 |                   
+ src/pages         |     100 |      100 |     100 |     100 |                   
+  NotFoundPage.tsx |     100 |      100 |     100 |     100 |                   
+ src/router        |     100 |      100 |     100 |     100 |                   
+  ...ctedRoute.tsx |     100 |      100 |     100 |     100 |                   
+ src/services      |       0 |        0 |       0 |       0 |                   
+  api.ts           |       0 |        0 |       0 |       0 | 1-81              
+ src/utils         |     100 |    92.59 |     100 |     100 |                   
+  ...chaseOrder.ts |     100 |    91.66 |     100 |     100 | 198-205           
+  formatting.ts    |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
