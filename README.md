@@ -1,24 +1,4 @@
-<div align="center">
-
-<p align="center">
-  <picture>
-    <source 
-      media="(prefers-color-scheme: dark)" 
-      srcset="frontend/src/assets/OmniStockLogo_Light.png"
-    >
-    <source 
-      media="(prefers-color-scheme: light)" 
-      srcset="frontend/src/assets/OmniStockLogo_Dark.png"
-    >
-    <img 
-      src="frontend/src/assets/OmniStockLogo_Light.png"
-      alt="Logo" 
-      width="300"
-    >
-  </picture>
-</p>
-
-# 🚀 OmniStock — Stock multicanal y presupuestos B2B
+# OmniStock — Stock multicanal y presupuestos B2B
 
 ### Plataforma full stack para inventario consolidado y simulación de órdenes de compra
 
@@ -28,7 +8,7 @@
 
 ---
 
-## 📋 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Mi Rol y Enfoque como Desarrollador Backend](#mi-rol-y-enfoque-como-desarrollador-backend)
 - [Características Clave e Impacto](#características-clave-e-impacto)
@@ -50,7 +30,7 @@
 
 > **OmniStock es un port de un proyecto de empresa.** Partiendo de una aplicación interna funcional, formé parte de un equipo de tres desarrolladores donde me centré al 100% en el backend. Mi labor fue diseñar e implementar una API REST moderna que reemplazara la lógica dispersa del proyecto original, aplicando principios de arquitectura limpia, resiliencia empresarial y testing riguroso.
 
-### 🏗️ Mi Contribución al Proyecto
+### Mi Contribución al Proyecto
 
 Participación activa en la **toma de decisiones arquitectónicas**, el **diseño e implementación del backend**, la **contenedorización con Docker** y la **mejora sustancial** del proyecto original de empresa.
 
@@ -304,7 +284,7 @@ Mi filosofía es: si no está testeado, no está terminado.
 
 ---
 
-## 🌟 Características Clave e Impacto
+## Características Clave e Impacto
 
 ### 🏗️ Diseño de Arquitectura
 - Participación activa en la toma de decisiones para la estructura del sistema, garantizando escalabilidad y mantenibilidad
